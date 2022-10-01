@@ -1,0 +1,13 @@
+.top-header{
+   font-size: 70px;
+   font-weight: bold;
+   margin-left: 20px;
+}
+.record-table{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.add-button{
+    display: flex;
+    justify-content: end;
+}
