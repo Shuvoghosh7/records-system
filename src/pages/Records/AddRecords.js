@@ -20,7 +20,7 @@ const AddRecords = () => {
             .then(data => {
                 console.log(data)
                 e.target.reset();
-                /* window.location.reload(false); */
+                window.location.reload(false);
             })
     }
     return (

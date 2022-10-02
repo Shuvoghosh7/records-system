@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Header, Icon, Modal, Table } from 'semantic-ui-react';
-
+import swal from 'sweetalert';
 
 const ShowRecords = ({ record,index,refetch }) => {
    const [open, setOpen] = useState(false)
@@ -25,6 +25,25 @@ const ShowRecords = ({ record,index,refetch }) => {
                     refetch()
                 })
     }
+    const handealDelete = () => {
+          const url = `http://localhost:5000/api/v1/records/${_id}`
+          fetch(url, {
+              method: 'DELETE'
+          })
+              .then(res => res.json())
+              .then(data => {
+                  refetch()
+                  console.log(data)
+                  swal("Successfully Delete Record");
+                  swal({
+                    title: "success!",
+                    text: "Successfully Delete Record!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                  });
+              })
+      
+  }
     return (
         <Table.Row textAlign='center'>
         <Table.Cell collapsing>
@@ -69,7 +88,7 @@ const ShowRecords = ({ record,index,refetch }) => {
                 </Modal.Content>
             </Modal>
         </Button>
-           <Button inverted color='red' size='big' > <Icon name='delete'/></Button>
+           <Button inverted color='red' size='big' onClick={handealDelete} > <Icon name='delete'/></Button>
         </Table.Cell>
       </Table.Row>
     );
