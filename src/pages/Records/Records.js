@@ -5,14 +5,15 @@ import './Records.css'
 import ShowRecords from './ShowRecords';
 const Records = () => {
     const [open, setOpen] = useState(false)
-    const { data: records, isLoading, refetch } = useQuery('records', () => fetch('http://localhost:5000/api/v1/records').then(res => res.json()))
+    const { data: records, isLoading, refetch } = useQuery('records', () => fetch('https://tranquil-fjord-16475.herokuapp.com/api/v1/records').then(res => res.json()))
+
     const handelSubmit = (e) => {
         const name = e.target.name.value
         const email = e.target.email.value
         const website = e.target.website.value
         const address = e.target.address.value
         console.log(name, email,website,address)
-        fetch("http://localhost:5000/api/v1/records", {
+        fetch("https://tranquil-fjord-16475.herokuapp.com/api/v1/records", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

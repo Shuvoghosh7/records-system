@@ -12,7 +12,7 @@ const ShowRecords = ({ record,index,refetch }) => {
         const website = e.target.website.value
         const address = e.target.address.value
         console.log(name, email,website,address)
-        fetch(`http://localhost:5000/api/v1/records/${_id}`, {
+        fetch(`https://tranquil-fjord-16475.herokuapp.com/api/v1/records/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',
@@ -26,7 +26,7 @@ const ShowRecords = ({ record,index,refetch }) => {
                 })
     }
     const handealDelete = () => {
-          const url = `http://localhost:5000/api/v1/records/${_id}`
+          const url = `https://tranquil-fjord-16475.herokuapp.com/api/v1/records/${_id}`
           fetch(url, {
               method: 'DELETE'
           })
