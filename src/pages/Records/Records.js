@@ -35,6 +35,7 @@ const Records = () => {
                                 <ShowRecords
                                     record={record}
                                     index={index}
+                                    refetch={refetch}
                                 />
                             )
                         }
