@@ -33,7 +33,7 @@ const UploadFile = () => {
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
             >
-                <Header icon='archive' content='Add New Records' />
+                <Header icon='archive' content='Add New File'/>
                 <Modal.Content>
                     <Form action="http://localhost:5000/api/v1/file/file-uploads" enctype="multipart/form-data" method="post">
                         <Form.Field error>
