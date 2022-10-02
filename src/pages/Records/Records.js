@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Button, Header, Table } from 'semantic-ui-react';
+import { Button, Header, Loader, Table } from 'semantic-ui-react';
 import AddRecords from './AddRecords';
 import './Records.css'
 import ShowRecords from './ShowRecords';
 const Records = () => {
     const { data: records, isLoading, refetch } = useQuery('records', () => fetch('http://localhost:5000/api/v1/records').then(res => res.json()))
-    console.log(records)
+   if(isLoading){
+    <Loader active inline='centered' />
+   }
+
     return (
         <div>
             <p className='top-header'>Simple records system</p>
