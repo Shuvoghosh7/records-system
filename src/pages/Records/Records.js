@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import { Button, Form, Header, Loader, Modal, Table } from 'semantic-ui-react';
 import './Records.css'
 import ShowRecords from './ShowRecords';
@@ -24,7 +25,7 @@ const Records = () => {
             .then(data => {
                 e.target.reset();
                 refetch()
-                
+                toast.success("Record Added successfully!") 
             })
     }
     if (isLoading) {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { Button, Form, Header, Icon, Modal, Table } from 'semantic-ui-react';
 import swal from 'sweetalert';
 
@@ -23,6 +24,7 @@ const ShowRecords = ({ record,index,refetch }) => {
                 .then(res => res.json())
                 .then(data => {
                     refetch()
+                    toast.success("Record Edit successfully!")  
                 })
     }
     const handealDelete = () => {
@@ -33,14 +35,7 @@ const ShowRecords = ({ record,index,refetch }) => {
               .then(res => res.json())
               .then(data => {
                   refetch()
-                  console.log(data)
-                  swal("Successfully Delete Record");
-                  swal({
-                    title: "success!",
-                    text: "Successfully Delete Record!",
-                    icon: "success",
-                    button: "Aww yiss!",
-                  });
+                  toast.success("Record Delete successfully !")    
               })
       
   }
