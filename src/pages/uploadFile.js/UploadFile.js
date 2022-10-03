@@ -19,7 +19,7 @@ const UploadFile = () => {
                     <Form action="https://tranquil-fjord-16475.herokuapp.com/api/v1/file/file-uploads" enctype="multipart/form-data" method="post">
                         <Form.Field error>
                             <label>Image</label>
-                            <input type="file" placeholder='Last Name' name='image' />
+                            <input type="file" placeholder='Last Name' name='image' multiple/>
                         </Form.Field>
 
                         <Button type='submit' primary >Submit</Button>
